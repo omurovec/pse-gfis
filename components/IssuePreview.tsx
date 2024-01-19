@@ -15,7 +15,6 @@ const IssuePreview = (props: IssuePreviewProps) => {
     <div
       style={{
         display: "flex",
-        fontFamily: "Inter, sans-serif",
         fontFamily: `-apple-system, "system-ui", "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji"`,
       }}
     >
