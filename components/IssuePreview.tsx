@@ -19,7 +19,6 @@ const IssuePreview = (props: IssuePreviewProps) => {
       }}
     >
       <svg
-        style={{ marginTop: "0.25rem" }}
         className="dark:fill-[#3fba4f] fill-[#197f36] mt-1"
         viewBox="0 0 16 16"
         version="1.1"
