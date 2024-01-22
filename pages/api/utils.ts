@@ -68,7 +68,10 @@ export const getOctokitInstance = (accessToken: string) => {
   });
 };
 
-export const fetchData = async (client: GraphQLClient, entities: Entity[]) => {
+export const fetchData = async (
+  client: GraphQLClient,
+  entities: Entity[]
+): Promise<RepoData[]> => {
   let query = "";
   const variables = {};
 
@@ -87,11 +90,7 @@ export const fetchData = async (client: GraphQLClient, entities: Entity[]) => {
     .map((key) => `$${key}: String!`)
     .join(", ")}) { ${query} }`;
 
-  const data = await client.request(query, variables);
-  return data;
-};
-
-export const filterData = (data: Record<string, any>): RepoData[] => {
+  const data = (await client.request(query, variables)) as any;
   const result: RepoData[] = [];
 
   Object.keys(data).forEach((key) => {
@@ -99,16 +98,33 @@ export const filterData = (data: Record<string, any>): RepoData[] => {
     if (key.startsWith("org")) {
       item.repositories.nodes.forEach((repo: any) => {
         if (repo.goodFirstIssues.totalCount != 0) {
-          console.log(repo.goodFirstIssues.nodes);
+          result.push({
+            owner: repo.owner.login,
+            name: repo.name,
+            avatarUrl: repo.owner.avatarUrl,
+            count: repo.goodFirstIssues.totalCount,
+            totalOpenIssues: repo.issues.totalCount,
+            url: repo.url,
+            issues: repo.goodFirstIssues.nodes.map((issue: any) => ({
+              number: issue.number,
+              title: issue.title,
+              url: issue.url,
+              author: issue.author.login,
+              createdAt: issue.createdAt,
+            })),
+          });
         }
+      });
+    } else if (key.startsWith("repo")) {
+      if (item.goodFirstIssues.totalCount != 0) {
         result.push({
-          owner: repo.owner.login,
-          name: repo.name,
-          avatarUrl: repo.owner.avatarUrl,
-          count: repo.goodFirstIssues.totalCount,
-          totalOpenIssues: repo.issues.totalCount,
-          url: repo.url,
-          issues: repo.goodFirstIssues.nodes.map((issue: any) => ({
+          name: item.name,
+          owner: item.owner.login,
+          avatarUrl: item.owner.avatarUrl,
+          count: item.goodFirstIssues.totalCount,
+          totalOpenIssues: item.issues.totalCount,
+          url: item.url,
+          issues: item.goodFirstIssues.nodes.map((issue: any) => ({
             number: issue.number,
             title: issue.title,
             url: issue.url,
@@ -116,23 +132,7 @@ export const filterData = (data: Record<string, any>): RepoData[] => {
             createdAt: issue.createdAt,
           })),
         });
-      });
-    } else if (key.startsWith("repo")) {
-      result.push({
-        name: item.name,
-        owner: item.owner.login,
-        avatarUrl: item.owner.avatarUrl,
-        count: item.goodFirstIssues.totalCount,
-        totalOpenIssues: item.issues.totalCount,
-        url: item.url,
-        issues: item.goodFirstIssues.nodes.map((issue: any) => ({
-          number: issue.number,
-          title: issue.title,
-          url: issue.url,
-          author: issue.author.login,
-          createdAt: issue.createdAt,
-        })),
-      });
+      }
     }
   });
 

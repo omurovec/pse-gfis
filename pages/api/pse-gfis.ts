@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
-import { getOctokitInstance, fetchData, filterData } from "./utils";
+import { getOctokitInstance, fetchData } from "./utils";
 import { RepoData } from "./types";
 import { PSE_ENTITIES } from "./constants";
 
@@ -17,7 +17,7 @@ export const fetchGfisData = async () => {
 
   const client = getOctokitInstance(accessToken);
 
-  const data = (await fetchData(client, PSE_ENTITIES)) as Record<string, any>;
+  const data = await fetchData(client, PSE_ENTITIES);
 
   // Check if the cache exists and is less than an hour old
   if (cache && currentTime - cacheTimestamp < 60 * 60 * 1000) {
@@ -25,11 +25,10 @@ export const fetchGfisData = async () => {
   }
 
   // Process the data to match the RepoData structure
-  const result = filterData(data);
 
-  cache = result; // Store the result in the cache
+  cache = data; // Store the result in the cache
   cacheTimestamp = currentTime; // Update the timestamp
-  return result;
+  return data;
 };
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
