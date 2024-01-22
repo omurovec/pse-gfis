@@ -3,12 +3,13 @@ import { NextApiRequest, NextApiResponse } from "next";
 import { emptySvg } from "./utils";
 import { fetchGfisData } from "./pse-gfis";
 
-const renderRepoPreview = (
+const renderIssuePreview = (
   darkMode: boolean,
   repo: { avatarUrl: string; name: string }
 ) => `
       <svg
         xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
         fill="none"
         role="img"
         viewBox="0 0 200 50"
@@ -37,13 +38,13 @@ const renderRepoPreview = (
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   fetchGfisData()
     .then((data) => {
-      const repoData = data?.[Number(req.query.repoIndex ?? 0)];
+      const issueData = data?.[Number(req.query.repoIndex ?? 0)];
       res
         .status(200)
         .setHeader("Content-Type", "image/svg+xml")
         .send(
-          repoData
-            ? renderRepoPreview(!req.query.lightMode, repoData)
+          issueData
+            ? renderIssuePreview(!req.query.lightMode, issueData)
             : emptySvg
         );
     })
