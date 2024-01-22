@@ -27,7 +27,7 @@ const renderRepoPreview = (
             fill: ${darkMode ? "white" : "black"};
         }
         </style>
-        <image href="${
+        <image xlink:href="${
           repo.avatarUrl
         }" height="30" width="30" x="0" y="0" clip-path="inset(0% round 2px)"/>
         <text class="title" x="40" y="20">${repo.name}</text>
