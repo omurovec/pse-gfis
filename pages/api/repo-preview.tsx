@@ -1,5 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
+import { emptySvg } from "./utils";
+import { fetchGfisData } from "./pse-gfis";
+
 const renderRepoPreview = (
   darkMode: boolean,
   repo: { avatarUrl: string; name: string }
@@ -32,13 +35,22 @@ const renderRepoPreview = (
 `;
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  res
-    .status(200)
-    .setHeader("Content-Type", "image/svg+xml")
-    .send(
-      renderRepoPreview(!req.query.lightMode, {
-        avatarUrl: "https://avatars.githubusercontent.com/u/90033109?v=4",
-        name: "semaphore",
-      })
-    );
+  fetchGfisData()
+    .then((data) => {
+      const repoData = data?.[Number(req.query.repoIndex ?? 0)];
+      res
+        .status(200)
+        .setHeader("Content-Type", "image/svg+xml")
+        .send(
+          repoData
+            ? renderRepoPreview(!req.query.lightMode, repoData)
+            : emptySvg
+        );
+    })
+    .catch((err) => {
+      res.status(500).json({
+        error: "An error occurred while processing the request.",
+        err,
+      });
+    });
 };

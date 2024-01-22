@@ -1,5 +1,8 @@
 import { NextApiRequest, NextApiResponse } from "next";
 
+import { fetchGfisData } from "./pse-gfis";
+import { emptySvg } from "./utils";
+
 const renderIssuePreview = (
   darkMode: boolean,
   issue: {
@@ -13,9 +16,9 @@ const renderIssuePreview = (
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
         role="img"
-        viewBox="0 0 200 50"
+        viewBox="0 0 600 50"
         version="1.1"
-        width="200"
+        width="600"
         height="50"
         aria-hidden="true"
       >
@@ -48,15 +51,25 @@ const renderIssuePreview = (
 `;
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  res
-    .status(200)
-    .setHeader("Content-Type", "image/svg+xml")
-    .send(
-      renderIssuePreview(!req.query.lightMode, {
-        title: "test",
-        author: "author",
-        createdAt: "01/01/2000",
-        number: 1,
-      })
-    );
+  fetchGfisData()
+    .then((data) => {
+      const repoData =
+        data?.[Number(req.query.repoIndex ?? 0)]?.issues[
+          Number(req.query.issueIndex ?? 0)
+        ];
+      res
+        .status(200)
+        .setHeader("Content-Type", "image/svg+xml")
+        .send(
+          repoData
+            ? renderIssuePreview(!req.query.lightMode, repoData)
+            : emptySvg
+        );
+    })
+    .catch((err) => {
+      res.status(500).json({
+        error: "An error occurred while processing the request.",
+        err,
+      });
+    });
 };

@@ -1,6 +1,6 @@
 import { GraphQLClient } from "graphql-request";
-import edgeChromium from "chrome-aws-lambda";
-import puppeteer from "puppeteer-core";
+
+import { Entity, RepoData } from "./types";
 
 const GITHUB_GRAPHQL_ENDPOINT = "https://api.github.com/graphql";
 
@@ -58,6 +58,8 @@ const buildRepoQuery = (index: number) => `
   }
 `;
 
+export const emptySvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0"></svg>`;
+
 export const getOctokitInstance = (accessToken: string) => {
   return new GraphQLClient(GITHUB_GRAPHQL_ENDPOINT, {
     headers: {
@@ -66,14 +68,7 @@ export const getOctokitInstance = (accessToken: string) => {
   });
 };
 
-export type EntityType =
-  | { org: string }
-  | { repo: { owner: string; repo: string } };
-
-export const fetchData = async (
-  client: GraphQLClient,
-  entities: EntityType[]
-) => {
+export const fetchData = async (client: GraphQLClient, entities: Entity[]) => {
   let query = "";
   const variables = {};
 
@@ -92,30 +87,54 @@ export const fetchData = async (
     .map((key) => `$${key}: String!`)
     .join(", ")}) { ${query} }`;
 
-  console.log(query);
   const data = await client.request(query, variables);
   return data;
 };
 
-export const renderPng = async (html: string) => {
-  const executablePath =
-    (await edgeChromium.executablePath) || process.env.LOCAL_CHROMIUM_PATH;
+export const filterData = (data: Record<string, any>): RepoData[] => {
+  const result: RepoData[] = [];
 
-  const browser = await puppeteer.launch({
-    executablePath,
-    args: edgeChromium.args,
-    headless: false,
+  Object.keys(data).forEach((key) => {
+    const item = data[key];
+    if (key.startsWith("org")) {
+      item.repositories.nodes.forEach((repo: any) => {
+        if (repo.goodFirstIssues.totalCount != 0) {
+          console.log(repo.goodFirstIssues.nodes);
+        }
+        result.push({
+          owner: repo.owner.login,
+          name: repo.name,
+          avatarUrl: repo.owner.avatarUrl,
+          count: repo.goodFirstIssues.totalCount,
+          totalOpenIssues: repo.issues.totalCount,
+          url: repo.url,
+          issues: repo.goodFirstIssues.nodes.map((issue: any) => ({
+            number: issue.number,
+            title: issue.title,
+            url: issue.url,
+            author: issue.author.login,
+            createdAt: issue.createdAt,
+          })),
+        });
+      });
+    } else if (key.startsWith("repo")) {
+      result.push({
+        name: item.name,
+        owner: item.owner.login,
+        avatarUrl: item.owner.avatarUrl,
+        count: item.goodFirstIssues.totalCount,
+        totalOpenIssues: item.issues.totalCount,
+        url: item.url,
+        issues: item.goodFirstIssues.nodes.map((issue: any) => ({
+          number: issue.number,
+          title: issue.title,
+          url: issue.url,
+          author: issue.author.login,
+          createdAt: issue.createdAt,
+        })),
+      });
+    }
   });
-  const page = await browser.newPage();
-  await page.setViewport({
-    width: 400,
-    height: 70,
-    deviceScaleFactor: 2,
-  });
-  await page.setContent(html);
-  const screenshot = await page.screenshot({
-    omitBackground: true,
-  });
-  await browser.close();
-  return screenshot;
+
+  return result;
 };
