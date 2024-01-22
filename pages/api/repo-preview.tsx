@@ -12,9 +12,9 @@ const renderIssuePreview = (
         xmlns:xlink="http://www.w3.org/1999/xlink"
         fill="none"
         role="img"
-        viewBox="0 0 200 50"
+        viewBox="0 0 600 50"
         version="1.1"
-        width="200"
+        width="600"
         height="50"
         aria-hidden="true"
       >
