@@ -7,19 +7,6 @@ This is a simple frontend/backend to grab all the "good first issues" from a num
 Starting from a list of orgs/repos, we use GraphQL to query the Github endpoint for their issues. And then we filter for issues that have the tag "good-first-issues" (and slight variations). We then simply add them up and give people a simple frontend to view the list.
 
 <br/>
-<br/>
-<br/>
-<svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none
-    viewBox="0 0 30 30"
-    version="1.1"
-    width="30"
-    height="30"
-    >
-    <image href="https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/image-redirect?repoIndex=0" height="30" width="30" x="0" y="0" clip-path="inset(0% round 2px)"/>
-    <text>test</text>
-</svg>
 
 [![Repo1](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/repo-preview?repoIndex=0#gh-dark-mode-only)](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/repo-redirect?repoIndex=0#gh-dark-mode-only)  
 [![Repo1](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-preview?repoIndex=0&issueIndex=0#gh-dark-mode-only)](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-redirect?repoIndex=0&issueIndex=0#gh-dark-mode-only)  
