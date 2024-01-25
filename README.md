@@ -11,38 +11,38 @@ Starting from a list of orgs/repos, we use GraphQL to query the Github endpoint 
 <br/>
 <svg
     xmlns="http://www.w3.org/2000/svg"
-    xmlns:xlink="http://www.w3.org/1999/xlink"
-    fill="none"
-    role="img"
+    fill="none
     viewBox="0 0 30 30"
     version="1.1"
-    width="600"
-    height="50"
-    aria-hidden="true" >
-    <image xlink:href="https://pse-gfis.vercel.app/api/image-redirect?repoIndex=0" height="30" width="30" x="0" y="0" clip-path="inset(0% round 2px)"/>
+    width="30"
+    height="30"
+    >
+    <image href="https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/image-redirect?repoIndex=0" height="30" width="30" x="0" y="0" clip-path="inset(0% round 2px)"/>
+    <text>test</text>
 </svg>
-[![Repo1](https://pse-gfis.vercel.app/api/repo-preview?repoIndex=0#gh-dark-mode-only)](https://pse-gfis.vercel.app/api/repo-redirect?repoIndex=0#gh-dark-mode-only)  
-[![Repo1](https://pse-gfis.vercel.app/api/issue-preview?repoIndex=0&issueIndex=0#gh-dark-mode-only)](https://pse-gfis.vercel.app/api/issue-redirect?repoIndex=0&issueIndex=0#gh-dark-mode-only)  
-[![Repo1](https://pse-gfis.vercel.app/api/issue-preview?repoIndex=0&issueIndex=1#gh-dark-mode-only)](https://pse-gfis.vercel.app/api/issue-redirect?repoIndex=0&issueIndex=1#gh-dark-mode-only)  
-[![Repo1](https://pse-gfis.vercel.app/api/issue-preview?repoIndex=0&issueIndex=2#gh-dark-mode-only)](https://pse-gfis.vercel.app/api/issue-redirect?repoIndex=0&issueIndex=2#gh-dark-mode-only)  
-[![Repo2](https://pse-gfis.vercel.app/api/repo-preview?repoIndex=1#gh-dark-mode-only)](https://pse-gfis.vercel.app/api/repo-redirect?repoIndex=1#gh-dark-mode-only)  
-[![Repo2](https://pse-gfis.vercel.app/api/issue-preview?repoIndex=1&issueIndex=0#gh-dark-mode-only)](https://pse-gfis.vercel.app/api/issue-redirect?repoIndex=1&issueIndex=0#gh-dark-mode-only)  
-[![Repo2](https://pse-gfis.vercel.app/api/issue-preview?repoIndex=1&issueIndex=1#gh-dark-mode-only)](https://pse-gfis.vercel.app/api/issue-redirect?repoIndex=1&issueIndex=1#gh-dark-mode-only)  
-[![Repo2](https://pse-gfis.vercel.app/api/issue-preview?repoIndex=1&issueIndex=2#gh-dark-mode-only)](https://pse-gfis.vercel.app/api/issue-redirect?repoIndex=1&issueIndex=2#gh-dark-mode-only)  
-[![Repo3](https://pse-gfis.vercel.app/api/repo-preview?repoIndex=2#gh-dark-mode-only)](https://pse-gfis.vercel.app/api/repo-redirect?repoIndex=1#gh-dark-mode-only)  
-[![Repo3](https://pse-gfis.vercel.app/api/issue-preview?repoIndex=2&issueIndex=0#gh-dark-mode-only)](https://pse-gfis.vercel.app/api/issue-redirect?repoIndex=2&issueIndex=0#gh-dark-mode-only)  
-[![Repo3](https://pse-gfis.vercel.app/api/issue-preview?repoIndex=2&issueIndex=1#gh-dark-mode-only)](https://pse-gfis.vercel.app/api/issue-redirect?repoIndex=2&issueIndex=1#gh-dark-mode-only)  
-[![Repo3](https://pse-gfis.vercel.app/api/issue-preview?repoIndex=2&issueIndex=2#gh-dark-mode-only)](https://pse-gfis.vercel.app/api/issue-redirect?repoIndex=2&issueIndex=2#gh-dark-mode-only)
 
-[![Repo1](https://pse-gfis.vercel.app/api/repo-preview?repoIndex=0#gh-light-mode-only)](https://pse-gfis.vercel.app/api/repo-redirect?repoIndex=0#gh-light-mode-only)  
-[![Repo1](https://pse-gfis.vercel.app/api/issue-preview?repoIndex=0&issueIndex=0#gh-light-mode-only)](https://pse-gfis.vercel.app/api/issue-redirect?repoIndex=0&issueIndex=0#gh-light-mode-only)  
-[![Repo1](https://pse-gfis.vercel.app/api/issue-preview?repoIndex=0&issueIndex=1#gh-light-mode-only)](https://pse-gfis.vercel.app/api/issue-redirect?repoIndex=0&issueIndex=1#gh-light-mode-only)  
-[![Repo1](https://pse-gfis.vercel.app/api/issue-preview?repoIndex=0&issueIndex=2#gh-light-mode-only)](https://pse-gfis.vercel.app/api/issue-redirect?repoIndex=0&issueIndex=2#gh-light-mode-only)  
-[![Repo2](https://pse-gfis.vercel.app/api/repo-preview?repoIndex=1#gh-light-mode-only)](https://pse-gfis.vercel.app/api/repo-redirect?repoIndex=1#gh-light-mode-only)  
-[![Repo2](https://pse-gfis.vercel.app/api/issue-preview?repoIndex=1&issueIndex=0#gh-light-mode-only)](https://pse-gfis.vercel.app/api/issue-redirect?repoIndex=1&issueIndex=0#gh-light-mode-only)  
-[![Repo2](https://pse-gfis.vercel.app/api/issue-preview?repoIndex=1&issueIndex=1#gh-light-mode-only)](https://pse-gfis.vercel.app/api/issue-redirect?repoIndex=1&issueIndex=1#gh-light-mode-only)  
-[![Repo2](https://pse-gfis.vercel.app/api/issue-preview?repoIndex=1&issueIndex=2#gh-light-mode-only)](https://pse-gfis.vercel.app/api/issue-redirect?repoIndex=1&issueIndex=2#gh-light-mode-only)  
-[![Repo3](https://pse-gfis.vercel.app/api/repo-preview?repoIndex=2#gh-light-mode-only)](https://pse-gfis.vercel.app/api/repo-redirect?repoIndex=2#gh-light-mode-only)  
-[![Repo3](https://pse-gfis.vercel.app/api/issue-preview?repoIndex=2&issueIndex=0#gh-light-mode-only)](https://pse-gfis.vercel.app/api/issue-redirect?repoIndex=2&issueIndex=0#gh-light-mode-only)  
-[![Repo3](https://pse-gfis.vercel.app/api/issue-preview?repoIndex=2&issueIndex=1#gh-light-mode-only)](https://pse-gfis.vercel.app/api/issue-redirect?repoIndex=2&issueIndex=1#gh-light-mode-only)  
-[![Repo3](https://pse-gfis.vercel.app/api/issue-preview?repoIndex=2&issueIndex=2#gh-light-mode-only)](https://pse-gfis.vercel.app/api/issue-redirect?repoIndex=2&issueIndex=2#gh-light-mode-only)
+[![Repo1](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/repo-preview?repoIndex=0#gh-dark-mode-only)](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/repo-redirect?repoIndex=0#gh-dark-mode-only)  
+[![Repo1](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-preview?repoIndex=0&issueIndex=0#gh-dark-mode-only)](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-redirect?repoIndex=0&issueIndex=0#gh-dark-mode-only)  
+[![Repo1](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-preview?repoIndex=0&issueIndex=1#gh-dark-mode-only)](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-redirect?repoIndex=0&issueIndex=1#gh-dark-mode-only)  
+[![Repo1](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-preview?repoIndex=0&issueIndex=2#gh-dark-mode-only)](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-redirect?repoIndex=0&issueIndex=2#gh-dark-mode-only)  
+[![Repo2](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/repo-preview?repoIndex=1#gh-dark-mode-only)](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/repo-redirect?repoIndex=1#gh-dark-mode-only)  
+[![Repo2](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-preview?repoIndex=1&issueIndex=0#gh-dark-mode-only)](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-redirect?repoIndex=1&issueIndex=0#gh-dark-mode-only)  
+[![Repo2](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-preview?repoIndex=1&issueIndex=1#gh-dark-mode-only)](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-redirect?repoIndex=1&issueIndex=1#gh-dark-mode-only)  
+[![Repo2](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-preview?repoIndex=1&issueIndex=2#gh-dark-mode-only)](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-redirect?repoIndex=1&issueIndex=2#gh-dark-mode-only)  
+[![Repo3](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/repo-preview?repoIndex=2#gh-dark-mode-only)](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/repo-redirect?repoIndex=1#gh-dark-mode-only)  
+[![Repo3](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-preview?repoIndex=2&issueIndex=0#gh-dark-mode-only)](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-redirect?repoIndex=2&issueIndex=0#gh-dark-mode-only)  
+[![Repo3](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-preview?repoIndex=2&issueIndex=1#gh-dark-mode-only)](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-redirect?repoIndex=2&issueIndex=1#gh-dark-mode-only)  
+[![Repo3](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-preview?repoIndex=2&issueIndex=2#gh-dark-mode-only)](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-redirect?repoIndex=2&issueIndex=2#gh-dark-mode-only)
+
+[![Repo1](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/repo-preview?repoIndex=0#gh-light-mode-only)](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/repo-redirect?repoIndex=0#gh-light-mode-only)  
+[![Repo1](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-preview?repoIndex=0&issueIndex=0#gh-light-mode-only)](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-redirect?repoIndex=0&issueIndex=0#gh-light-mode-only)  
+[![Repo1](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-preview?repoIndex=0&issueIndex=1#gh-light-mode-only)](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-redirect?repoIndex=0&issueIndex=1#gh-light-mode-only)  
+[![Repo1](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-preview?repoIndex=0&issueIndex=2#gh-light-mode-only)](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-redirect?repoIndex=0&issueIndex=2#gh-light-mode-only)  
+[![Repo2](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/repo-preview?repoIndex=1#gh-light-mode-only)](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/repo-redirect?repoIndex=1#gh-light-mode-only)  
+[![Repo2](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-preview?repoIndex=1&issueIndex=0#gh-light-mode-only)](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-redirect?repoIndex=1&issueIndex=0#gh-light-mode-only)  
+[![Repo2](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-preview?repoIndex=1&issueIndex=1#gh-light-mode-only)](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-redirect?repoIndex=1&issueIndex=1#gh-light-mode-only)  
+[![Repo2](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-preview?repoIndex=1&issueIndex=2#gh-light-mode-only)](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-redirect?repoIndex=1&issueIndex=2#gh-light-mode-only)  
+[![Repo3](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/repo-preview?repoIndex=2#gh-light-mode-only)](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/repo-redirect?repoIndex=2#gh-light-mode-only)  
+[![Repo3](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-preview?repoIndex=2&issueIndex=0#gh-light-mode-only)](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-redirect?repoIndex=2&issueIndex=0#gh-light-mode-only)  
+[![Repo3](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-preview?repoIndex=2&issueIndex=1#gh-light-mode-only)](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-redirect?repoIndex=2&issueIndex=1#gh-light-mode-only)  
+[![Repo3](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-preview?repoIndex=2&issueIndex=2#gh-light-mode-only)](https://pse-gfis-git-temp-header-example-omurovec.vercel.app/api/issue-redirect?repoIndex=2&issueIndex=2#gh-light-mode-only)
