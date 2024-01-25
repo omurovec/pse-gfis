@@ -9,7 +9,18 @@ Starting from a list of orgs/repos, we use GraphQL to query the Github endpoint 
 <br/>
 <br/>
 <br/>
-
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    fill="none"
+    role="img"
+    viewBox="0 0 30 30"
+    version="1.1"
+    width="600"
+    height="50"
+    aria-hidden="true" >
+    <image xlink:href="https://pse-gfis.vercel.app/api/image-redirect?repoIndex=0" height="30" width="30" x="0" y="0" clip-path="inset(0% round 2px)"/>
+</svg>
 [![Repo1](https://pse-gfis.vercel.app/api/repo-preview?repoIndex=0#gh-dark-mode-only)](https://pse-gfis.vercel.app/api/repo-redirect?repoIndex=0#gh-dark-mode-only)  
 [![Repo1](https://pse-gfis.vercel.app/api/issue-preview?repoIndex=0&issueIndex=0#gh-dark-mode-only)](https://pse-gfis.vercel.app/api/issue-redirect?repoIndex=0&issueIndex=0#gh-dark-mode-only)  
 [![Repo1](https://pse-gfis.vercel.app/api/issue-preview?repoIndex=0&issueIndex=1#gh-dark-mode-only)](https://pse-gfis.vercel.app/api/issue-redirect?repoIndex=0&issueIndex=1#gh-dark-mode-only)  
